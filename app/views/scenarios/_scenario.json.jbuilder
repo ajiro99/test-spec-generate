@@ -1,0 +1,2 @@
+json.extract! scenario, :id, :project_id, :scenario_name, :scenario_no, :description, :count_item, :count_item_target, :count_remaining, :count_ok, :count_ng, :created_at, :updated_at
+json.url scenario_url(scenario, format: :json)

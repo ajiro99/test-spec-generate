@@ -1,0 +1,28 @@
+$(function() {
+
+var table = $('<table class="table table-striped table-bordered table-hover">');
+
+var th = $('<tr>')
+.append('<th><%= t('view.no') %></th>')
+.append('<th><%= t('view.screen_name') %></th>')
+.append('<th><%= t('view.test_content') %></th>')
+.append('<th><%= t('view.check_content') %></th>');
+
+table.append($('<thead>').append(th));
+
+var tbody = $('<tbody>');
+<% @preview.each do |preview| %>
+    var td = $('<tr>')
+    .append('<td>' + "<%= preview[:no] %>" + '</td>')
+    .append('<td>' + "<%= simple_format(preview[:screenName]) %>" + '</td>')
+    .append('<td>' + "<%= simple_format(preview[:testContent]) %>" + '</td>')
+    .append('<td>' + "<%= simple_format(preview[:checkContent]) %>" + '</td>');
+
+    tbody.append(td);
+<% end %>
+
+table.append(tbody);
+
+$('#error').html('');
+$('#previewtable').html(table);
+});

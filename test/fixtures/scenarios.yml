@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project_id: 
+  scenario_name: MyString
+  scenario_no: 1
+  description: MyText
+  count_item: 1
+  count_item_target: 1
+  count_remaining: 1
+  count_ok: 1
+  count_ng: 1
+
+two:
+  project_id: 
+  scenario_name: MyString
+  scenario_no: 1
+  description: MyText
+  count_item: 1
+  count_item_target: 1
+  count_remaining: 1
+  count_ok: 1
+  count_ng: 1

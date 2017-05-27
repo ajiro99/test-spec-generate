@@ -1,0 +1,23 @@
+$(function() {
+
+var table = $('<div class="alert alert-danger alert-dismissable" role="alert"><button type="button" class="close" data-dismiss="alert">')
+.append('<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>')
+<% if @scenario.errors.any? %>
+.append('<h4><%= pluralize(@scenario.errors.count, "error") %> prohibited this scenario from being saved:</h4>')
+.append('<ul>')
+.append('<% @scenario.errors.full_messages.each do |msg| %>')
+.append('<li><%= msg %></li>')
+.append('<% end %>')
+.append('</ul>')
+<% else%>
+.append('<h4><%= pluralize(1, "error") %> prohibited this scenario from being saved:</h4>')
+.append('<ul>')
+.append('<li><%= flash[:alert] %></li>')
+.append('</ul>')
+<% end %>
+.append('</div>');
+
+
+$('#error').html(table);
+$('#previewtable').html('');
+});

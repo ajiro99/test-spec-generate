@@ -1,0 +1,59 @@
+<%
+if @scenario.id.nil?
+  resource_info = [@project, @scenario]
+else
+  resource_info = [@scenario]
+end
+%>
+<%= form_for(resource_info, remote: true, html: { class: "form-horizontal", role: "form" }) do |f| %>
+  <div class="table-responsive" id="error" style="width:50%;">
+  </div>
+  <%= flash[:alert] %>
+  
+  <div style="float:left; width:50%;">
+    <div class="form-group">
+      <%= f.label t('view.scenario_no'), class: "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.number_field :scenario_no, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label t('view.scenario_name'), class: "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_field :scenario_name, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label t('view.description'), class: "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_area :description, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label t('view.input_scenario'), class: "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_area :input_scenario, class: "form-control", :size=>"10x15" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        
+        <%if @scenario.id.nil?%>
+          <%= link_to project_scenarios_path, class: 'btn btn-default' do %>
+            <span class="glyphicon glyphicon-list-alt"></span>
+            <%= t('view.Back') %>
+          <% end %>
+        <% else %>
+          <%= link_to project_scenarios_path(@project), class: 'btn btn-default' do %>
+            <span class="glyphicon glyphicon-list-alt"></span>
+            <%= t('view.Back') %>
+          <% end %>
+        <% end %>
+        <%= submit_tag t('view.Preview'), :name => 'preview_button',class: "btn" %>
+        <%= f.submit class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+  <div class="table-responsive" id="previewtable" style="float:right; width:47%;">
+  </div>
+<% end %>

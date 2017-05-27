@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  scenario_id: 
+  test_case_no: 1
+  screen_name: MyString
+  test_content: MyText
+  check_content: MyText
+  description: MyText
+  status: MyString
+
+two:
+  scenario_id: 
+  test_case_no: 1
+  screen_name: MyString
+  test_content: MyText
+  check_content: MyText
+  description: MyText
+  status: MyString

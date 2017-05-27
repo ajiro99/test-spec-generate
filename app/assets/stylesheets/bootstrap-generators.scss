@@ -1,0 +1,36 @@
+@import "bootstrap-variables.scss";
+@import "bootstrap-sprockets.scss";
+@import "bootstrap.scss";
+
+body {
+  //padding-top: $navbar-height + 10px;
+  padding-top: 0px;
+}
+
+.page-header {
+  padding-bottom: 5px;
+  margin: 0px 0 20px;
+
+  a.btn {
+    float: right;
+  }
+
+  a.btn + a.btn {
+    margin-right: 8px;
+  }
+}
+
+.fotter-button {
+  margin-bottom: 20px;
+  margin-left: 60px;
+}
+/*
+.form-control {
+  width: 60%;
+}*/
+
+input[type="radio"], input[type="checkbox"] {
+  width: initial;
+  height: initial;
+  margin-top: 7px;
+}
