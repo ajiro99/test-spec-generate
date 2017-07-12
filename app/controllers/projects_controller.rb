@@ -97,7 +97,7 @@ class ProjectsController < ApplicationController
                                                alignment: { horizontal: :left, vertical: :top, wrap_text: :true }, 
                                                bg_color: 'E6E6FA'
 
-          sheet.column_widths(12, 30, 30)
+          sheet.column_widths(15, 40, 40, 11, 11, 11, 11, 11)
           sheet.add_row(['プロジェクト名', @project.project_name], style: header_cell) 
           sheet.add_row()
           
@@ -110,7 +110,7 @@ class ProjectsController < ApplicationController
         end
       
         @scenarios.each do |scenario|
-          p.workbook.add_worksheet(name: "#{scenario.scenario_no}_#{scenario.scenario_name}") do |sheet|   
+          p.workbook.add_worksheet(name: "#{scenario.scenario_no}") do |sheet|   
             styles = p.workbook.styles
             table_cell = styles.add_style border: { style: :thin, color: '00' }, 
                                                  alignment: { horizontal: :left, vertical: :top, wrap_text: :true }
@@ -118,7 +118,8 @@ class ProjectsController < ApplicationController
             header_cell = styles.add_style border: { style: :thin, color: '00' }, 
                                                  alignment: { horizontal: :left, vertical: :top, wrap_text: :true }, 
                                                bg_color: 'E6E6FA'
-                                               
+            
+            sheet.column_widths(12, 40, 40, 40, 11, 11, 11, 11)                         
             sheet.add_row(['シナリオNo.','シナリオ名','概要','総項目数','対象項目数','残項目数','OK数','NG数'], style: header_cell)  
             sheet.add_row([scenario.scenario_no, scenario.scenario_name, scenario.description, 
                 scenario.count_item, scenario.count_item_target, scenario.count_remaining, scenario.count_ok, scenario.count_ng], style: table_cell)
