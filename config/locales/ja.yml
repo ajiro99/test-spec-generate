@@ -25,7 +25,7 @@ ja:
     updated_at: 更新日時
 
     scenario_name: シナリオ名
-    scenario_no: シナリオ番号
+    scenario_no: No.
     count_item: テスト項目数
     count_item_target: テスト項目対象数
     count_remaining: テスト残数
