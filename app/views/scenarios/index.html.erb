@@ -37,8 +37,8 @@
             <td><%= scenario.count_remaining %></td>
             <td><%= scenario.count_ok %></td>
             <td><%= scenario.count_ng %></td>
-            <td><%= link_to 'Edit', edit_scenario_path(scenario) %></td>
-            <td><%= link_to 'Destroy', scenario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to t('view.Edit'), edit_scenario_path(scenario) %></td>
+            <td><%= link_to t('view.Destroy'), scenario, method: :delete, data: { confirm: '削除しますか?' } %></td>
       <% end %>
     </tbody>
   </table>

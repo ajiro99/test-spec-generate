@@ -25,7 +25,7 @@
             <td><%= project.created_at.strftime("%Y/%m/%d %H:%M")  %></td>
             <td><%= project.updated_at.strftime("%Y/%m/%d %H:%M")  %></td>
             <td><%= link_to t('view.Edit'), edit_project_path(project) %></td>
-            <td><%= link_to t('view.Destroy'), project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to t('view.Destroy'), project, method: :delete, data: { confirm: '削除しますか?' } %></td>
             <td><%= link_to t('view.Export'), export_path(project, format: :xlsx) %></td>
       <% end %>
     </tbody>
